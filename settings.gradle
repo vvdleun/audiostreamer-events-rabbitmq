@@ -6,3 +6,4 @@ plugins {
 rootProject.name = 'audiostreamer-scrobbler-rabbitmq'
 
 include('bluos-handler')
+include('rabbitmq-shared')

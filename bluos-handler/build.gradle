@@ -3,7 +3,36 @@ plugins {
     id 'application' // Apply the application plugin
 }
 
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
 dependencies {
+    implementation project(':rabbitmq-shared')
+
+	testImplementation(platform('org.junit:junit-bom:5.11.0'))
+	testImplementation('org.junit.jupiter:junit-jupiter')
+	testRuntimeOnly('org.junit.platform:junit-platform-launcher')
+}
+
+test {
+	useJUnitPlatform()
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
 }
 
 application {
