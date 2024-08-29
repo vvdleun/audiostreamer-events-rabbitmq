@@ -1,0 +1,11 @@
+plugins {
+    id 'java'        // Apply the Java plugin
+    id 'application' // Apply the application plugin
+}
+
+dependencies {
+}
+
+application {
+    mainClass = 'nl.vincentvanderleun.bluos.BluOsPlayersDetectorApp'
+}
